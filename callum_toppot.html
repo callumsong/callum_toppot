@@ -20,15 +20,24 @@
 			this.add_traffic();
 			this.total_donuts = Math.floor(this.total_traffic * this.percent_entering * this.donuts_per_head * this.hours_operation);
 			this.report = function(){
-				console.log("Based on the simulation, "+ this.area_name + " will sell " + this.total_donuts + " donuts today. There will be " + Math.floor(this.total_donuts / 11) + " donuts needed per hour");
+				console.log("Based on " + simulation_number + " simulation(s), " + this.area_name + " will sell " + this.total_donuts + " donuts today. There will be " + Math.floor(this.total_donuts / 11) + " donuts needed per hour");
 			};
 		}
-
 		var downtown = new Area("Downtown", 80, 220, 10, 4);
 		var capitol_hill = new Area ("Capitol Hill",5, 45, 45, 2);
 		var south_lake_union = new Area ("South Lake Union", 180, 250, 5, 6);
 		var wedgewood = new Area ("Wedgewood", 20, 60, 20, 1.5);
 		var ballard = new Area ("Ballard", 25, 175, 33, 1);
+		
+		var simulation_number = prompt("How many times would you like the simulation to run?");
+
+		for (var i; i < simulation_number; i++){
+			downtown.total_donuts += downtown.total_donuts;
+			capitol_hill.total_donuts += capitol_hill.total_donuts;
+			south_lake_union.total_donuts += south_lake_union.total_donuts;
+			wedgewood.total_donuts += wedgewood.total_donuts;
+			ballard.total_donuts += ballard.total_donuts;
+		}
 
 		downtown.report();
 		capitol_hill.report();
