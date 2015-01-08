@@ -8,4 +8,4 @@
 - Percentage of people that will come in (as a whole number)
 - The number of donuts they will consume
 
-The current one only does one simulation - there will be another version that adds as many simulations as the user wishes.
+This particular version allows the user to input how many times they would like to run the simulation, for more accuracy.
