@@ -9,14 +9,14 @@
 			this.total_traffic = 0;
 			// finding foot traffic within any random hour
 			this.random_hour_traffic = (Math.floor(Math.random() * (this.maximum_traffic - this.minimum_traffic))) + this.minimum_traffic;
+			this.percent_entering = (percent_entering) / 100;
+			this.donuts_per_head = donuts_per_head;
 			// adding foot traffic per hour of operation
 			this.add_traffic = function(){
 				for (var i = 0; i < this.hours_operation ; i++){
 					this.total_traffic += this.random_hour_traffic;
 				}
 			};
-			this.percent_entering = (percent_entering) / 100;
-			this.donuts_per_head = donuts_per_head;
 			this.add_traffic();
 			this.total_donuts = Math.floor(this.total_traffic * this.percent_entering * this.donuts_per_head * this.hours_operation);
 			this.report = function(){
