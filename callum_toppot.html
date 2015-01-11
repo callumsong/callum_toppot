@@ -1,44 +1,45 @@
-<script>
-		function Area (area_name, minimum_traffic, maximum_traffic, percent_entering, donuts_per_head){
-			this.area_name = area_name;
-			this.hours_operation = 11;
-			this.minimum_traffic = minimum_traffic;
-			this.maximum_traffic = maximum_traffic;
-			this.total_traffic = 0;
-			this.random_hour_traffic = (Math.ceil(Math.random() * (this.maximum_traffic - this.minimum_traffic))) + this.minimum_traffic;
-			this.percent_entering = percent_entering;
-			this.donuts_per_head = donuts_per_head;
-			this.add_traffic = function(){
-				for (var i = 0; i < this.hours_operation ; i++){
-					this.total_traffic += this.random_hour_traffic;
-					return this.total_traffic;
-				}
-			};
-			this.add_traffic()
-			this.total_donuts = Math.ceil(this.total_traffic * this.percent_entering * this.donuts_per_head * this.hours_operation);
-			this.report = function(){
-				console.log("Based on " + simulation_number + " simulation(s), " + this.area_name + " will sell " + this.total_donuts + " donuts today. There will be " + Math.floor(this.total_donuts / 11) + " donuts needed per hour");
-			};
-		}
-		var downtown = new Area("Downtown", 80, 220, .1, 4);
-		var capitol_hill = new Area ("Capitol Hill",5, 45, .45, 2);
-		var south_lake_union = new Area ("South Lake Union", 180, 250, .05, 6);
-		var wedgewood = new Area ("Wedgewood", 20, 60, .2, 1.5);
-		var ballard = new Area ("Ballard", 25, 175, .33, 1);
-		
-		var simulation_number = prompt("How many times would you like the simulation to run?");
+    <script>
+    	function Area (area_name, minimum_traffic, maximum_traffic, percent_entering, donuts_per_head){
+    		this.area_name = area_name;
+    		this.hours_operation = 11;
+    		this.minimum_traffic = minimum_traffic;
+    		this.maximum_traffic = maximum_traffic;
+    		this.total_traffic = 0;
+    		this.random_hour_traffic = (Math.ceil(Math.random() * (this.maximum_traffic - this.minimum_traffic))) + this.minimum_traffic;
+    		this.percent_entering = percent_entering;
+    		this.donuts_per_head = donuts_per_head;
+    		this.add_traffic = function(){
+    			for (var i = 0; i < this.hours_operation ; i++){
+    				this.total_traffic += this.random_hour_traffic;
+    				return this.total_traffic;
+    			}
+    		};
+    		this.add_traffic()
+    		this.total_donuts = Math.ceil(this.total_traffic * this.percent_entering * this.donuts_per_head * this.hours_operation);
+    		this.report = function(){
+    			console.log("Based on " + simulation_number + " simulation(s), " + this.area_name + " will sell " + this.total_donuts + " donuts today. There will be " + Math.floor(this.total_donuts / 11) + " donuts needed per hour");
+    		};
+    	}
+    	var downtown = new Area("Downtown", 80, 220, .1, 4);
+    	var capitol_hill = new Area ("Capitol Hill",5, 45, .45, 2);
+    	var south_lake_union = new Area ("South Lake Union", 180, 250, .05, 6);
+    	var wedgewood = new Area ("Wedgewood", 20, 60, .2, 1.5);
+    	var ballard = new Area ("Ballard", 25, 175, .33, 1);
+    	
+    	var simulation_number = prompt("How many times would you like the simulation to run?");
 
-		for (var i; i < simulation_number; i++){
-			downtown.total_donuts += downtown.total_donuts;
-			capitol_hill.total_donuts += capitol_hill.total_donuts;
-			south_lake_union.total_donuts += south_lake_union.total_donuts;
-			wedgewood.total_donuts += wedgewood.total_donuts;
-			ballard.total_donuts += ballard.total_donuts;
-		}
+    	for (var i; i < simulation_number; i++){
+    		downtown.total_donuts += downtown.total_donuts;
+    		capitol_hill.total_donuts += capitol_hill.total_donuts;
+    		south_lake_union.total_donuts += south_lake_union.total_donuts;
+    		wedgewood.total_donuts += wedgewood.total_donuts;
+    		ballard.total_donuts += ballard.total_donuts;
+    	}
 
-		downtown.report();
-		capitol_hill.report();
-		south_lake_union.report();
-		wedgewood.report();
-		ballard.report();
-</script>
+    	downtown.report();
+    	capitol_hill.report();
+    	south_lake_union.report();
+    	wedgewood.report();
+    	ballard.report();
+      
+    </script>
