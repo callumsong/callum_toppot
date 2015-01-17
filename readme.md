@@ -8,16 +8,16 @@
 - Percentage of people that will come in (as a whole number)
 - The number of donuts they will consume
 
-The current one only does one simulation - there will be another version that adds as many simulations as the user wishes.
+This particular version allows the user to input how many times they would like to run the simulation, for more accuracy.
 
-Here are the first test results of my readme:
+One test run results as follows:
 
-Based on the simulation, Downtown will sell 8131 donuts today. There will be 739 donuts needed per hour
+Based on 20  simulation(s), Downtown will sell 7163 donuts today. There will be 651 donuts needed per hour
 
-Based on the simulation, Capitol Hill will sell 1633 donuts today. There will be 148 donuts needed per hour
+Based on 20  simulation(s), Capitol Hill will sell 1415 donuts today. There will be 128 donuts needed per hour
 
-Based on the simulation, South Lake Union will sell 8167 donuts today. There will be 742 donuts needed per hour
+Based on 20  simulation(s), South Lake Union will sell 8639 donuts today. There will be 785 donuts needed per hour
 
-Based on the simulation, Wedgewood will sell 1960 donuts today. There will be 178 donuts needed per hour
+Based on 20  simulation(s), Wedgewood will sell 1343 donuts today. There will be 122 donuts needed per hour
 
-Based on the simulation, Ballard will sell 4671 donuts today. There will be 424 donuts needed per hour
+Based on 20  simulation(s), Ballard will sell 4711 donuts today. There will be 428 donuts needed per hour

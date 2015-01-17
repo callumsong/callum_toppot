@@ -1,38 +1,41 @@
 <script>
-		function Area (area_name, minimum_traffic, maximum_traffic, percent_entering, donuts_per_head){
-			this.area_name = area_name;
-			this.hours_operation = 11;
-			// defining the least amount of traffic possible
-			this.minimum_traffic = minimum_traffic;
-			// the most amount of traffic possible
-			this.maximum_traffic = maximum_traffic;
-			this.total_traffic = 0;
-			// finding foot traffic within any random hour
-			this.random_hour_traffic = (Math.floor(Math.random() * (this.maximum_traffic - this.minimum_traffic))) + this.minimum_traffic;
-			// adding foot traffic per hour of operation
-			this.add_traffic = function(){
-				for (var i = 0; i < this.hours_operation ; i++){
-					this.total_traffic += this.random_hour_traffic;
-				}
-			};
-			this.percent_entering = (percent_entering) / 100;
-			this.donuts_per_head = donuts_per_head;
-			this.add_traffic();
-			this.total_donuts = Math.floor(this.total_traffic * this.percent_entering * this.donuts_per_head * this.hours_operation);
-			this.report = function(){
-				console.log("Based on the simulation, "+ this.area_name + " will sell " + this.total_donuts + " donuts today. There will be " + Math.floor(this.total_donuts / 11) + " donuts needed per hour");
-			};
-		}
+  function Area (area_name, minimum_traffic, maximum_traffic, percent_entering, donuts_per_head){
+    this.area_name = area_name;
+    this.hours_operation = 11;
+    this.minimum_traffic = minimum_traffic;
+    this.maximum_traffic = maximum_traffic;
+    this.total_traffic = 0;
+    this.trafficReview = [];
+    this.percent_entering = percent_entering;
+    this.donuts_per_head = donuts_per_head;
+    this.total_donuts = 0;
+    this.random_hour_amount = function() {
+      for (var i = 0; i < this.hours_operation; i++) {
+      this.trafficReview.push (Math.ceil(((Math.random() * (this.maximum_traffic - this.minimum_traffic)) + this.minimum_traffic) * this.percent_entering * this.donuts_per_head));
+      }
+    }
+    this.addAllTraffic = function() {
+      for (var i = 0; i < this.hours_operation; i++) {
+        this.total_donuts += this.trafficReview[i]
+      }
+    }
+    this.report = function(){
+      this.random_hour_amount();
+      this.addAllTraffic();
+      console.log("Donuts in " + this.area_name + " was " + this.trafficReview.join() + " and the total was " + this.total_donuts);
+    }
+  }
+  var downtown = new Area("Downtown", 80, 220, .1, 4);
+  var capitol_hill = new Area ("Capitol Hill",5, 45, .45, 2);
+  var south_lake_union = new Area ("South Lake Union", 180, 250, .05, 6);
+  var wedgewood = new Area ("Wedgewood", 20, 60, .2, 1.5);
+  var ballard = new Area ("Ballard", 25, 175, .33, 1);
+  
+  downtown.report();
+  capitol_hill.report();
+  south_lake_union.report();
+  wedgewood.report();
+  ballard.report();
 
-		var downtown = new Area("Downtown", 80, 220, 10, 4);
-		var capitol_hill = new Area ("Capitol Hill",5, 45, 45, 2);
-		var south_lake_union = new Area ("South Lake Union", 180, 250, 5, 6);
-		var wedgewood = new Area ("Wedgewood", 20, 60, 20, 1.5);
-		var ballard = new Area ("Ballard", 25, 175, 33, 1);
-
-		downtown.report();
-		capitol_hill.report();
-		south_lake_union.report();
-		wedgewood.report();
-		ballard.report();
+  
 </script>
